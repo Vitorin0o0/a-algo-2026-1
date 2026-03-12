@@ -1,0 +1,38 @@
+import time
+import sys
+
+#Aumenta o limite de recursão para evitar erros em casos de n grandes
+sys.setrecursionlimit(2000) 
+
+#Calcula o fatorial de um número n recursivamente.
+def fatorial(n):
+   
+    #Caso base: Para a recursão, evitando um loop infinito.
+    if n == 0 or n == 1:
+
+        return 1
+    
+    # Passo recursivo: Multiplica o número atual pelo fatorial de (n - 1).
+    else: 
+        
+        return n * fatorial(n-1) 
+
+        
+valores  = [10, 100, 500, 1000]
+
+#Iterar sobre os valores e calcula o fatorial, medindo o tempo de execução para cada um deles.
+for n in valores:
+
+    
+    start_time = time.time()
+    Resposta = fatorial(n)
+    python_time = time.time() - start_time
+
+    print("\nPara n = {}:".format(n))
+    print("Tempo de excecução: {:.6f} s".format(python_time)) 
+
+
+""" 
+O algoritmo de fatorial recursivo faz uma chamada para cada valor de n até atingir o caso base (n = 0 ou n = 1), funcionando como uma "Contagem regressiva". Ou seja, o número de chamadas cresce proporcionalmente ao valor de n. Portanto, o tempo de execução cresce linearmente com n, resultando em uma complexidade assintótica O(n), descrita pela fórmula
+T_n = T_{n-1} + 1.
+"""
