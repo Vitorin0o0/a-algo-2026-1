@@ -1,0 +1,26 @@
+import time
+from os import system
+
+def  inverter(arr):
+
+    if len(arr) == 0:
+        return []
+    else:
+        return [arr[-1]] + inverter(arr[:-1])
+    
+array = []
+x = ""
+
+while x != "0":
+   
+   x = str(input("\nDigite um número / letra (0 para sair): "))
+
+   if x != "0":
+       array.append(x)
+
+   system('cls')
+
+if array ==  inverter(array):
+    print("A sequência -> {} -> é um palíndromo.".format(array))
+else:
+    print("A sequência -> {} -> não é um palíndromo.".format(array))
