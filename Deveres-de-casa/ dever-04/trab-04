@@ -1,0 +1,17 @@
+#from math import pow
+
+def recursao(n):
+
+    if n == 1:
+        return 2
+    else: 
+        return 2 * recursao(n - 1) + (n**2)
+    
+#def f_fechada(n):
+    #return 13 * pow(2, n-1) - pow(n, 2) - 4*n - 6
+    
+valor = int(input("\nDigite um valor: "))
+
+print("A recursão referente a esse valor é: ", recursao(valor))
+
+#print("A forma fechada referente a esse valor é: ", f_fechada(valor))
